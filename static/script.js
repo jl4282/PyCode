@@ -14,7 +14,7 @@ function runPython(){
     }
     req.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
     var text = document.getElementById('textarea1').value;
-    req.send(text);
+    req.send(encodeURIComponent(text));
 };
 
 document.getElementById('submit').addEventListener('click', runPython);
