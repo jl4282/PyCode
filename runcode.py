@@ -1,7 +1,8 @@
 import sys
 from io import StringIO
 def run_code(code):
-    with open("test2.py", "w") as file:
+    code_file = 'code_to_run.py'
+    with open(code_file, "w") as file:
         file.write(code)
     # sys.stdout = open('file', 'w')
     
@@ -11,7 +12,7 @@ def run_code(code):
     TODO: figure out why line breaks aren't working in printing
     TODO: decide whether it's better to write to a line, or keep as string buffer
     '''
-    with open("test2.py") as f:
+    with open(code_file) as f:
         try:
             code = compile(f.read(), "test2.py", 'exec')
             exec(code)
