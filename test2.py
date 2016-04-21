@@ -1,1 +1,2 @@
-print('hi')
+i = 10
+print(i)
