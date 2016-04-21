@@ -3,13 +3,29 @@
 
 {% block content %}
 <div class="row">
-    <div class="input-field col s12">
-        <textarea id="textarea1" class="materialize-textarea"></textarea>
-        <label for="textarea1">Your Code</label>
+    <div class="col s12">
+      <ul class="tabs">
+        <li class="tab col s3"><a href="#test1" class="active">Example</a></li>
+          <!-- on click, add a tab -->
+        <li class="tab col s3"><a href="#test2">+</a></li>
+        <!--<li class="tab col s3"><a href="#test4">Add</a></li>-->
+      </ul>
     </div>
 </div>
-<a class="btn" id="submit">Run</a>
-<div class="row">
-    <p id="terminal"></p>
+<div id="test1" class="card-panel">
+    <div class="row">
+        <div class="input-field col s12">
+            <textarea id="textarea1" class="materialize-textarea"></textarea>
+            <label for="textarea1">Your Code</label>
+        </div>
+    </div>
 </div>
+<div class="card-panel">
+    <a class="btn" id="submit">Run</a>
+    <div class="row">
+        <p>Output:</p>
+        <p id="terminal"></p>
+    </div>
+</div>
+
 {% endblock %}
