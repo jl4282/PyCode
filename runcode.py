@@ -15,12 +15,13 @@ def run_code(code):
 
     with open(code_file) as f:
         try:
-            os.system('virtualenv venv')
-            os.system('source venv/bin/activate')
+            os.system('cd main_interpreter\n virtualenv venv')
+            # os.system('virtualenv venv')
+            os.system('source main_interpreter/venv/bin/activate')
             code = compile(f.read(), code_file, 'exec')
             exec(code)
-            os.system('deactivate')
-            os.system('rm -r venv')
+            os.system('deactivate') # this command isn't working for some reason
+            os.system('rm -r main_interpreter/venv')
         except Exception as e:
             # scrub file name
             error = str(e)
