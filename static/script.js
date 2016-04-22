@@ -8,13 +8,19 @@ function runPython(){
             console.log(terminal);
             document.getElementById('terminal').innerHTML= terminal.text;
         }
+        document.getElementById('submit').classList.toggle('invisible');
+        document.getElementById('spinner').classList.toggle('invisible');
     }
     req.onerror = function(){
         console.log('there was an error');
+        document.getElementById('submit').classList.toggle('invisible');
+        document.getElementById('spinner').classList.toggle('invisible');
     }
     req.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
     var text = document.getElementById('textarea1').value;
     req.send(encodeURIComponent(text));
+    document.getElementById('submit').classList.toggle('invisible');
+    document.getElementById('spinner').classList.toggle('invisible');
 };
 
 document.getElementById('submit').addEventListener('click', runPython);

@@ -1,6 +1,5 @@
 from flask import Flask, render_template, request, redirect, jsonify
 import runcode
-from flask_assets import Bundle, Environment
 
 app = Flask(__name__)
 app.debug = True
@@ -19,7 +18,5 @@ def run_code():
     print('running code: ', terminal)
     text = {'text': terminal}
     return jsonify(**text)
-
-
 
 app.run()

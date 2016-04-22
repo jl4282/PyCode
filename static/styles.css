@@ -5,3 +5,7 @@
 #terminal {
     white-space: pre-line;
 }
+
+.invisible {
+    display: none;
+}
