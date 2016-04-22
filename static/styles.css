@@ -1,3 +1,7 @@
 #textarea1, #terminal {
     font-family:'Roboto Mono';
 }
+
+#terminal {
+    white-space: pre-line;
+}
