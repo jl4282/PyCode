@@ -3,7 +3,7 @@ from io import StringIO
 import os
 
 
-def run_code(code):
+def run_code(code, modules):
 
     code_file = 'code_to_run.py'
     with open(code_file, "w") as file:
@@ -18,6 +18,11 @@ def run_code(code):
             os.system('cd main_interpreter\n virtualenv venv')
             # os.system('virtualenv venv')
             os.system('source main_interpreter/venv/bin/activate')
+
+            # loop through modules and install them
+            for mod in modules:
+                os.system('pip install ' + mod)
+
             code = compile(f.read(), code_file, 'exec')
             exec(code)
             os.system('deactivate') # this command isn't working for some reason

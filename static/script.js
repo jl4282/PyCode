@@ -18,7 +18,9 @@ function runPython(){
     }
     req.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
     var text = document.getElementById('textarea1').value;
-    req.send(encodeURIComponent(text));
+    var modules = document.getElementById('modulesText').value;
+//    JSON.stringify({text:text, modules: modules});
+    req.send(JSON.stringify({text:encodeURIComponent(text), modules:encodeURIComponent(modules)}));
     document.getElementById('submit').classList.toggle('invisible');
     document.getElementById('spinner').classList.toggle('invisible');
 };
