@@ -3,18 +3,26 @@ from io import StringIO
 import os
 
 
+def change_stdout(old_f):
+    def new_f(*args, **kwargs):
+        old_stdout = sys.stdout
+        sys.stdout = mystdout = StringIO()
+        old_f(*args, **kwargs)
+        sys.stdout = old_stdout
+        return mystdout.getvalue()
+    return new_f
+
+@change_stdout
 def run_code(code, modules):
 
     code_file = 'code_to_run.py'
     with open(code_file, "w") as file:
         file.write(code)
     # sys.stdout = open('file', 'w')
-    
-    old_stdout = sys.stdout
-    sys.stdout = mystdout = StringIO()
 
     with open(code_file) as f:
         try:
+            # requires virtualenv to already be installed
             os.system('cd main_interpreter\n virtualenv venv')
             # os.system('virtualenv venv')
             os.system('source main_interpreter/venv/bin/activate')
@@ -32,12 +40,5 @@ def run_code(code, modules):
             error = str(e)
             error = error.replace(code_file + ', ', '')
             print(error)
-
-        finally:
-            sys.stdout = old_stdout
-            # sys.stdout = sys.__stdout__
-            print('this should print in console')
     # with open("file", 'r') as f:
     #     return f.read()
-
-    return mystdout.getvalue()
