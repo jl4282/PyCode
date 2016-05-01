@@ -4,6 +4,11 @@ import os
 
 
 def change_stdout(old_f):
+    """
+    Captures the console log statements of a function to be run
+    :param old_f: old file to be wrapped
+    :return: returns the console logs of the input function when run
+    """
     def new_f(*args, **kwargs):
         old_stdout = sys.stdout
         sys.stdout = mystdout = StringIO()
@@ -14,7 +19,12 @@ def change_stdout(old_f):
 
 @change_stdout
 def run_code(code, modules):
-
+    """
+    Takes code and installs modules in a virtual environment, and then runs the code
+    :param code: string file of code to be run
+    :param modules: list of modules to install
+    :return: None (to be wrapped with change_stdout
+    """
     code_file = 'code_to_run.py'
     with open(code_file, "w") as file:
         file.write(code)

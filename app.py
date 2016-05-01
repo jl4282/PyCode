@@ -19,7 +19,6 @@ app.debug = True
 class Program():
     def __init__(self, code, modules, result):
         self.code = code
-    #     add list comprehension here?
         self.modules = modules
         self.result = result
     def get_code(self):
@@ -41,10 +40,10 @@ class Modules():
 
     def get_all_modules(self):
         return self.modules
-    # def __str__(self):
-    #     {}
 
+# Storing programs
 programs = []
+# Storing module data
 all_modules = Modules()
 
 @app.route('/')
@@ -55,24 +54,20 @@ def home():
 def run_code():
     print('orig request', request.form)
     code = request.form['text']
-    mods = []
-    # print(request.form['modules'])
+    # Getting all the modules used (and List Comprehension)
     mods = [m.strip() for m in request.form['modules'].split()]
     terminal = runcode.run_code(code, mods)
     print('running code: ', terminal)
 
+    # DICTIONARY COMPREHENSION
     mod_dict = {key: 1 for key in mods}
-    # for m in mod_dict:
-    #     modules
     all_modules.merge_dict(mod_dict)
 
+    # Adding new program to program list
     programs.append(Program(code, mods, terminal))
 
     text = {'text': terminal}
-    print('all modules: ', all_modules.get_all_modules())
-    print('Programs: ', programs[0].get_code())
     return jsonify(**text)
-    # return 'hi'
 
 
 # test if works

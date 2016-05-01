@@ -1,6 +1,26 @@
 # PyCode
 
-TODO:
+##About PyCode
+PyCode is a naive application that runs python code on the web. It downloads the python code, installs any
+modules specified, runs it in a virtual environment, and then returns a result.
+
+##Running PyCode
+- Install Flask
+- Install virtualenv
+- Run app.py
+
+##Classes, decorators, higher order functions
+I'm using two classes and a decorator. The classes are found in app.py and the decorator can be found in runcode.py
+
+##2x requirements
+I used a list comprehension as well as a dictionary comprehension.
+
+##Module requirements
+- Flask 2 points
+- virtualenv 1 point
+
+##TODO somepoint in the future:
+These are features that I would implement if I had time in the future...
 - [ ] Saving sessions
   - [ ] Mongo to save code
     - [option one](https://docs.mongodb.org/ecosystem/tutorial/write-a-tumblelog-application-with-flask-mongoengine/)
