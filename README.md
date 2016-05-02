@@ -20,12 +20,45 @@ I used a list comprehension as well as a dictionary comprehension.
 - virtualenv 1 point
 
 ##Happy Paths (is that what you called them?)
-1. Click on the modules tab
-2. Type 'numpy' to import numpy
-3. Click on the code tab and type 'import numpy as np
-a = np.arange(15).reshape(3, 5)
-print(a)'
-4. Click 'run'
+1. Let's use Numpy...
+  1. Click on the modules tab
+  2. Type `numpy` to import numpy
+  3. Click on the code tab and type:
+    
+    `import numpy as np`
+    
+    `a = np.arange(15).reshape(3, 5)`
+    
+    `print(a)`
+  
+  4. Click `run`
+2. Using indentations:
+  
+  Without any imports (or with imports if you'd like), type:
+  
+  `for (i in range(10)):`
+    
+  `  print(i) #indent with 1 space`
+3. Wait... do nested indentations work?
+
+  Try:
+  
+  `for i in range(1):`
+   
+  `for j in range(5): #indent with 1 space`
+    
+  `print(j) #indent with 2 spaces`
+4. But surely errors won't percolate...
+  
+  Type:
+    
+  `for i in range(1): # no indents`
+     
+  `for j in range(5): #indent with 1 space`
+      
+  `print(j) #indent with 1 space`
+
+
 
 
 ##TODO somepoint in the future:
