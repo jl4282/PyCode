@@ -35,6 +35,11 @@ class Modules():
         self.modules[module] = self.module.get(module, 0) + 1
 
     def merge_dict(self, d):
+        """
+        Merges a dictionary of modules into this list of modules
+        :param d: dictionary
+        :return: None
+        """
         for key, value in d.items():
             self.modules[key] = self.modules.get(key, 0) + value
 

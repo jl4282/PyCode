@@ -19,6 +19,15 @@ I used a list comprehension as well as a dictionary comprehension.
 - Flask 2 points
 - virtualenv 1 point
 
+##Happy Paths (is that what you called them?)
+1. Click on the modules tab
+2. Type 'numpy' to import numpy
+3. Click on the code tab and type 'import numpy as np
+a = np.arange(15).reshape(3, 5)
+print(a)'
+4. Click 'run'
+
+
 ##TODO somepoint in the future:
 These are features that I would implement if I had time in the future...
 - [ ] Saving sessions
