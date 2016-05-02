@@ -59,7 +59,7 @@ I used a list comprehension as well as a dictionary comprehension.
   `print(j) #indent with 1 space`
 
 
-
+![alt tag](./minions.gif)
 
 ##TODO somepoint in the future:
 These are features that I would implement if I had time in the future...
