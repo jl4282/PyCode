@@ -36,7 +36,7 @@ I used a list comprehension as well as a dictionary comprehension.
   
   Without any imports (or with imports if you'd like), type:
   
-  `for (i in range(10)):`
+  `for i in range(10):`
     
   `  print(i) #indent with 1 space`
 3. Wait... do nested indentations work?
@@ -57,6 +57,24 @@ I used a list comprehension as well as a dictionary comprehension.
   `for j in range(5): #indent with 1 space`
       
   `print(j) #indent with 1 space`
+
+5. How about a chorus
+
+    Type:
+
+    TURN YOUR SPEAKERS UP
+
+    `import os as os`
+
+    `d = 'Doop ' * 80 #Turn those speakers up`
+
+    `os.system('say -v Cello ' + d)`
+
+    (yes, there are more efficient ways of doing this, but for some reason "+" does not render)
+
+6. Wait, it sings? But.. can it delete all my files through terminal?
+
+    I have no clue, so let's not try it.
 
 
 ![alt tag](./minions.gif)
