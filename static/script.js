@@ -48,7 +48,7 @@ function getStats(){
                 text += '\nResult:\n' +  p.result;
             }
             if (userStats.modules){
-                text += '\nModules Graph (only if there are modules): \n';
+                text += '\nModules Count (only if there are modules): \n';
             }
 
             for (var k in userStats.modules){

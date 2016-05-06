@@ -82,6 +82,10 @@ I used a list comprehension as well as a dictionary comprehension.
 
     The modules and code sections should be filled out.
 
+8. Beautiful stats
+
+    Click on `stats` and it will show you a list of all the programs, code, modules, and outputs.
+    On the bottom is a count of the programs that use a module
 
 
 ![alt tag](./minions.gif)

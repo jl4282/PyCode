@@ -34,11 +34,20 @@ class Program_List():
                 return None
         self.programs_list.append(Program(code, modules, result, slug))
     def get_program(self, slug):
+        """
+        takes a slug and returns a program or false
+        :param slug: string of slug
+        :return: Program or False
+        """
         for p in self.programs_list:
             if p.get_slug() == slug:
                 return p
         return False
     def get_all_programs(self):
+        """
+        Returns an array of objects
+        :return: ARRAY OF OBJECTS -> NOT JSON!!
+        """
         return [p.get_json() for p in self.programs_list]
 
 # Going to save programs so that it can save files and retrieve them, and keep track of modules used
@@ -57,10 +66,21 @@ class Program():
     def get_slug(self):
         return self.slug
     def update_program(self, code, modules, result):
+        """
+        Updates Program
+        :param code: code
+        :param modules: modules
+        :param result: result
+        :return: None
+        """
         self.code = code
         self.modules = modules
         self.result = result
     def get_json(self):
+        """
+        Gets a dictionary of a program
+        :return: Dictionary object
+        """
         return {'code': self.code, 'modules': self.modules, 'result': self.result}
 class Modules():
     def __init__(self):
