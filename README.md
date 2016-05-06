@@ -74,7 +74,14 @@ I used a list comprehension as well as a dictionary comprehension.
 
 6. Wait, it sings? But.. can it delete all my files through terminal?
 
-    I have no clue, so let's not try it.
+    Probably? Best not to try it though...
+
+7. Loading... let's try loading a saved "session"
+
+    Head to `localhost:5000/C783NR`
+
+    The modules and code sections should be filled out.
+
 
 
 ![alt tag](./minions.gif)

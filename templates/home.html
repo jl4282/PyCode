@@ -17,7 +17,7 @@
 <div id="modules" class="card-panel">
     <div class="row">
         <div class="input-field col s12">
-            <textarea id="modulesText" class="materialize-textarea">{{ program.modules }}</textarea>
+            <textarea id="modulesText" class="materialize-textarea">{% for m in program.modules %} {{ m  + '\n'}} {% endfor %} </textarea>
             <label for="textarea1">Your Modules (input one module per line)</label>
         </div>
     </div>
