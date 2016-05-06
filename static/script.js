@@ -22,7 +22,7 @@ function runPython(){
     var text = document.getElementById('textarea1').value;
     var modules = document.getElementById('modulesText').value;
     console.log(text, encodeURIComponent(text));
-      req.send("text=" + encodeURIComponent(text) + "&modules=" + modules)
+      req.send("text=" + encodeURIComponent(text) + "&modules=" + modules + "&path=" + window.location.pathname);
 //    JSON.stringify({text:text, modules: modules});
 //    req.send(JSON.stringify({text:encodeURIComponent(text), modules:encodeURIComponent(modules)}));
     document.getElementById('submit').classList.toggle('invisible');
@@ -45,10 +45,12 @@ function getStats(){
                 var p = userStats.programs[i];
                 text += '\nCode:\n' +  p.code;
                 text += '\nModules:\n' +  p.modules;
-                text += '\nResult:\n' +  p.results;
+                text += '\nResult:\n' +  p.result;
             }
-            text += '\nModules:\n';
-//            console.log(Object.keys(userStats.modules));
+            if (userStats.modules){
+                text += '\nModules Graph (only if there are modules): \n';
+            }
+
             for (var k in userStats.modules){
                 text += k + ': ' + userStats.modules[k] + '\n';
             }

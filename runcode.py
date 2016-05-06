@@ -18,14 +18,15 @@ def change_stdout(old_f):
     return new_f
 
 @change_stdout
-def run_code(code, modules):
+def run_code(code, modules, file):
     """
     Takes code and installs modules in a virtual environment, and then runs the code
     :param code: string file of code to be run
     :param modules: list of modules to install
     :return: None (to be wrapped with change_stdout
     """
-    code_file = 'code_to_run.py'
+    # code_file = 'code_to_run.py'
+    code_file = file + '.py'
     with open(code_file, "w") as file:
         file.write(code)
     # sys.stdout = open('file', 'w')
