@@ -98,6 +98,10 @@ class Modules():
             self.modules[key] = self.modules.get(key, 0) + value
 
     def get_all_modules(self):
+        """
+        Returns dictionary of modules
+        :return: Dictionary
+        """
         return self.modules
 
 # Storing programs

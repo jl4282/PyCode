@@ -85,7 +85,9 @@ I used a list comprehension as well as a dictionary comprehension.
 8. Beautiful stats
 
     Click on `stats` and it will show you a list of all the programs, code, modules, and outputs.
-    On the bottom is a count of the programs that use a module
+
+    Of note: modules on the bottom show how many time a program was RUN with those modules,
+    NOT how many programs utilize those modules. (relic from that past that's not enough time to change)
 
 
 ![alt tag](./minions.gif)
