@@ -78,9 +78,11 @@ I used a list comprehension as well as a dictionary comprehension.
 
 7. Loading... let's try loading a saved "session"
 
-    Head to `localhost:5000/C783NR`
+    Create a program, click run, and copy the url into another window. 
 
-    The modules and code sections should be filled out.
+    Head to `localhost:5000/yourslug` (The url from the other tab)
+
+    The modules and code sections should be filled out exactly as it was when you ran it in the other window.
 
 8. Beautiful stats
 
